@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置mybatis需要连接的数据库接口-->
+    <!--<properties resource="mybatis.properties"/>-->
+    <typeAliases>
+        <typeAlias type="app.model.UserModel" alias="userModel"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <!--配置事务-->
+            <transactionManager type="JDBC"/>
+            <!--配置数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://rds18185lwg7k90rjbj0.mysql.rds.aliyuncs.com:3306/pornography?useUnicode=true&amp;characterEncoding=utf-8"/>
+                <property name="username" value="pornography"/>
+                <property name="password" value="Dolay123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--定义持久化类mapper-->
+    <mappers>
+        <mapper resource="mappers/UserMapper.xml"/>
+    </mappers>
+</configuration>
