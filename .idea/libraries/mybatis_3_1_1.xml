@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="mybatis-3.1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/mybatis-3.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mybatis-generator-core-1.3.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mybatis-generator-maven-plugin-1.3.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mybatis-spring-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mysql-connector-java-5.1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--第二种继承Mybatis之插件方式-->
+<generatorConfiguration>
+    <context id="mybatisUserTables">
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!--mysql数据库链接 阿里云-->
+        <!--<jdbcConnection
+            driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://rds18185lwg7k90rjbj0.mysql.rds.aliyuncs.com:3306/pornography?useUnicode=true&amp;characterEncoding=utf-8"
+            userId="pornography"
+            password="Dolay123456">
+        </jdbcConnection>-->
+
+        <!-- localhost -->
+        <jdbcConnection
+            driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/java_test?useUnicode=true&amp;characterEncoding=utf-8"
+            userId="root"
+            password="1111">
+        </jdbcConnection>
+
+        <!--<javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>-->
+
+        <!--java模型 targetProject="${user.dir}/src/main/java"-->
+        <javaModelGenerator
+            targetPackage="com.java.aop.bean"
+            targetProject="${user.dir}/src/main/java">
+
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- targetProject:mapper映射文件生成的位置 targetProject="${user.dir}/src/main/resources"-->
+        <sqlMapGenerator
+            targetPackage="com.java.aop.dao"
+            targetProject="${user.dir}/src/main/java">
+
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- targetPackage：mapper接口生成的位置  targetProject="${user.dir}/src/main/java"-->
+        <javaClientGenerator
+            type="XMLMAPPER"
+            targetPackage="com.java.aop.dao"
+            targetProject="${user.dir}/src/main/java">
+
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 指定数据库表 tableName表名 domainObjectName指定插件生成的表的映射类名,可自行定义-->
+        <!--<table tableName="po_user" schema="">
+            &lt;!&ndash;<property name="useActualColumnNames" value="true"/>&ndash;&gt;
+            <generatedKey column="ID" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="DEPT_ID" property="deptId"/>
+            <columnOverride column="ROLE_ID" property="roleId"/>
+            <columnOverride column="STATUS" property="status"/>
+            <columnOverride column="USERNAME" property="userName" javaType="java.lang.String" />
+            <columnOverride column="PASSWORD" property="password" javaType="java.lang.String" />
+            <columnOverride column="REALNAME" property="realName" javaType="java.lang.String" />
+            <columnOverride column="LASTTIME" property="lastTime" javaType="java.lang.String" />
+            &lt;!&ndash;<columnOverride column="DATE_FIELD" property="startDate" />
+            <ignoreColumn column="FRED" />
+            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />&ndash;&gt;
+        </table>-->
+
+        <!--<table tableName="po_role" schema="">
+            &lt;!&ndash;<property name="userActualColumnNames" value="true"/>&ndash;&gt;
+            <generatedKey column="ID" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="ROLENAME" property="roleName" javaType="java.lang.String"/>
+            <columnOverride column="STATUS" property="status"/>
+        </table>
+
+        <table tableName="po_dept" schema="">
+            <generatedKey column="ID" sqlStatement="mysql" identity="true"/>
+        </table>-->
+        <table tableName="user"></table>
+
+    </context>
+</generatorConfiguration>

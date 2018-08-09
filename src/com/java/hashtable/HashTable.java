@@ -23,6 +23,7 @@ public class HashTable<K,V> implements Cloneable{
      *
      * */
 
+    private HashMap hashMap;
     private transient Entry<?,?>[] table;   //hashtable用于存储键值对的数组
     private transient int count;            // hashtable中统计entry已被使用的数量,而非hashtable大小,这点必须注意
     private int threshold;                  // hashtable扩容点 扩容点大小 = 实际可用容量*负载因子
